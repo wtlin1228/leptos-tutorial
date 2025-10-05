@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use leptos_tutorial::spreading::SpreadingExample;
+use leptos_tutorial::{iteration, spreading::SpreadingExample};
 
 /// Shows progress toward a goal.
 #[component]
@@ -29,9 +29,16 @@ fn App() -> impl IntoView {
             {count}
         </button>
         <p>"Double count: "{double_count}</p>
+
         <ProgressBar progress=count />
         <ProgressBar progress=Signal::derive(double_count) />
+
         <SpreadingExample />
+
+        <iteration::BasicExample />
+        <iteration::StaticListExample />
+        <iteration::DynamicListExample initial_length=2 />
+        <iteration::AccessListIndexExample initial_length=2 />
     }
 }
 
